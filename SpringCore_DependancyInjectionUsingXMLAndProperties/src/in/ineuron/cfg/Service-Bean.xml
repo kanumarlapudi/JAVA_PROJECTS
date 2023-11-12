@@ -7,12 +7,13 @@
         http://www.springframework.org/schema/context
         https://www.springframework.org/schema/context/spring-context.xsd">
 
-
-
-	<import resource="Service-Bean.xml" />
 	<import resource="Persistnece-Bean.xml" />
-	<import resource="Controller-Beans.xml" />
+
+	<!-- Constructor Injection inside Service layer -->
+	<bean id="customerService"
+		class="in.ineuron.service.CustomerMgmtServiceimpl">
+		<constructor-arg name="dao" ref="customerDao" />
+	</bean>
+
 
 </beans>
-
-	

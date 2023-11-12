@@ -7,12 +7,14 @@
         http://www.springframework.org/schema/context
         https://www.springframework.org/schema/context/spring-context.xsd">
 
-
-
 	<import resource="Service-Bean.xml" />
-	<import resource="Persistnece-Bean.xml" />
-	<import resource="Controller-Beans.xml" />
+
+	<!-- Constructor Injection inside Controller layer -->
+	<bean id="customerController"
+		class="in.ineuron.controller.MainController">
+		<constructor-arg name="service" ref="customerService" />
+	</bean>
+
+
 
 </beans>
-
-	
